@@ -1,0 +1,425 @@
+@use "sass:map";
+@import "_variables";
+@import "media_queries";
+// Fonts
+@font-face {
+    font-family: "Photograph Signature";
+    src: local("Photograph Signature"), 
+    url("../assets/fonts/Photograph-Signature-Logo-fonts/Photograph Signature.ttf") format("truetype"),
+    url("../assets/fonts/Photograph-Signature-Logo-fonts/Photograph Signature.otf") format("opentype");
+}
+//@import url('http://fonts.cdnfonts.com/css/photograph-signature');
+//@import  './../assets/fonts/Photograph-Signature-Logo-fonts/Photograph\ Signature.otf';
+//@import  './../assets/fonts/Photograph-Signature-Logo-fonts/Photograph\ Signature.ttf';
+//@import './../assets/fonts/Photograph-Signature-Logo-fonts/swash.otf';
+//@import './../assets/fonts/Photograph-Signature-Logo-fonts/swash.ttf';
+
+p, span, h1, h2, h3, h4, h5 ,h6 {
+    background-color: transparent !important;
+    margin: 0;
+  }
+
+  // Layouts
+  .largeCenteredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1330px;
+
+    margin-left: auto;
+    margin-right: auto;
+  
+    @include breakpoint-under("xxl") {
+      max-width: 92%;
+    }
+  }
+
+.centeredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    max-width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    @include breakpoint-under("xxl") {
+      max-width: 1100px;
+    }
+  
+    @include breakpoint-under("xl") {
+      max-width: 900px;
+    }
+  
+    @include breakpoint-under("lg") {
+      max-width: 630px;
+    }
+  
+    @include breakpoint-under("md") {
+      max-width: 450px;
+    }
+  
+    @include breakpoint-under("sm") {
+      width: calc(100% - 100px) !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .smallCenteredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    @include breakpoint-under("xxl") {
+      max-width: 700px;
+    }
+  
+    @include breakpoint-under("xl") {
+      max-width: 500px;
+    }
+  
+    @include breakpoint-under("lg") {
+      max-width: 630px;
+    }
+  
+    @include breakpoint-under("md") {
+      max-width: 500px;
+    }
+  
+    @include breakpoint-under("sm") {
+      width: calc(100% - 80px);
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  
+  .leftCenteredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    max-width: 100%;
+    margin-right: calc(50% - 667px);
+    margin-left: 0;
+  
+    @include breakpoint-under("xxl") {
+      max-width: 96.2%;
+    }
+  }
+  
+  .widerLeftCenteredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    max-width: 100%;
+    margin-left: calc(50% - 580px);
+    margin-right: 0;
+  
+    @include breakpoint-under("xxl") {
+      margin-left: calc(50% - 548px);
+    }
+  
+    @include breakpoint-under("xl") {
+      margin-left: calc(50% - 458px);
+    }
+  
+    @include breakpoint-under("lg") {
+      margin-left: calc(50% - 316px);
+    }
+  
+    @include breakpoint-under("md") {
+      margin-left: calc(50% - 250px);
+    }
+  
+    @include breakpoint-under("sm") {
+      width: calc(100% - 80px) !important;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  
+  .fullMobile {
+    @include breakpoint-under('lg'){
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }  
+
+
+  ////////@at-root@use "sass:map";
+
+body {
+  margin: 0;
+  color: map.get($theme-colors, "light-blue");
+  background-color: map.get($theme-colors, "dark-blue");
+  overscroll-behavior: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.headerFixed {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+ }
+
+ .noHeaderFixed {
+  opacity: 0 ;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+ }
+
+ #main {
+  background-color: map.get($theme-colors, "dark-blue");
+  & > div:last-child {
+    position: relative;
+    padding-top: 9rem;
+    @include breakpoint-under('lg'){
+      padding-top: 5.9rem;
+    }
+  }
+ }
+
+ .mainHome {
+  background: linear-gradient(0deg, map.get($theme-colors, "grey") 85%, map.get($theme-colors, "dark-blue") 20%);
+  padding-top: 10rem !important;
+  @include breakpoint-under('lg'){
+    padding-top: 10.6rem !important;
+  }
+  // @include breakpoint-under('sm'){
+  //   padding-top: 8rem !important;
+  // }
+ }
+ .mainWithBreadcrumb {
+  background: linear-gradient(0deg, map.get($theme-colors, "grey") 85%, map.get($theme-colors, "dark-blue") 20%);
+  padding-top: 9rem !important;
+  @include breakpoint-under('lg'){
+    padding-top: 6rem !important;
+  }
+ }
+ .linesAnimated {
+  width: 100% !important;
+  transition: all 3s cubic-bezier(.19,1,.22,1);
+  transition-delay: 0.2s;
+  transform: translateX(0%) !important;
+  opacity: 1 !important;
+  @media (prefers-reduced-motion: reduce) {
+    transition: all 0s cubic-bezier(.19,1,.22,1);
+  }
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  @include breakpoint-under('md'){
+    display: block;
+    gap: 0rem;
+  }
+  div {
+    width: 50%;
+    @include breakpoint-under('md'){
+      width: 100%;
+    }
+  }
+}
+.col-3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  @include breakpoint-under('md'){
+    display: block;
+    gap: 0rem;
+  }
+  div {
+    width: 33.333333%;
+    @include breakpoint-under('md'){
+      width: 100%;
+    }
+  }
+}
+
+.animatable {
+  opacity: 0;
+  transition: opacity .8s linear, transform 2s cubic-bezier(.19,1,.22,1);
+  transform: translate3d(0px,300px,0px);
+  will-change: transform,opacity;
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1 !important;
+    transform: translateZ(0) !important;
+  }
+  &.animated {
+    opacity: 1 !important;
+     transform: translateZ(0);
+  }
+}
+
+
+.animCarousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include breakpoint-under('lg'){
+    .servicesHomeCarousel {
+      opacity: 0;
+      transition: opacity .4s linear, transform 1.8s cubic-bezier(.19,1,.22,1);
+      transition-delay: 1s;
+      transform: translate3d(50%, 0px, 0px);
+      will-change: transform,opacity;
+      @media (prefers-reduced-motion: reduce) {
+        opacity: 1;
+        transform: translateZ(0) !important;
+      }
+  
+      // @include breakpoint-under('lg'){
+      //   transform: translate3d(0%, 0px, 0px);
+      //   opacity: 1;
+      // }
+    }
+    
+    &.animated {
+      .servicesHomeCarousel {
+        opacity: 1;
+        transform: translateZ(0);  
+    }
+  }
+  }
+  & > div:first-child {
+    opacity: 0;
+    transition: opacity .4s linear, transform 1.8s cubic-bezier(.19,1,.22,1);
+    transition-delay: 1s;
+    transform: translate3d(50%, 0px, 0px);
+    will-change: transform,opacity;
+    @media (prefers-reduced-motion: reduce) {
+      opacity: 1;
+      transform: translateZ(0) !important;
+    }
+
+    @include breakpoint-under('lg'){
+      transform: translate3d(0px, 0px, 0px);
+      opacity: 1;
+    }
+  }
+  
+  &.animated {
+    & > div:first-child {
+      opacity: 1;
+      transform: translateZ(0);  
+  }
+}
+
+}
+
+.imgAnimatable {
+  &.imgAnimatableOpacity {
+    img {
+     opacity: 0;
+     transition: all 1.5s ease-in-out;
+    }
+  }
+ &.imgAnimated {
+   img {
+     animation: imgAnimation 1.5s;
+     opacity: 1;
+     transition: all 1.5s ease-in-out;
+     @media (prefers-reduced-motion: reduce) {
+       animation: none;
+     }
+   }
+ }
+}
+
+@keyframes imgAnimation {
+  0% {
+    opacity: 0;
+      transform: scale(1.1);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.cardAnimatable {
+  opacity: 1;
+  .labelSx {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  .labelDx {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  .secondBlockQuote, .secondBlock, .thirdBlock  {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  .quote {
+    opacity: 0;
+  }
+  &.animated {
+      animation: cardAnimation .5s;
+      opacity: 1 !important;
+      transition: all 1.5s ease-in-out;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+
+       .labelSx, .labelDx {
+        opacity: 1;
+        transform: translateX(0px);
+        transition: all 0.8s;
+        transition-delay: 0.5s ;
+       }
+       .secondBlock  {
+        transition: all 0.8s;
+        transition-delay: 1.4s ;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      .secondBlockQuote {
+        transition: all 0.8s;
+        transition-delay: 0.3s ;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      .thirdBlock {
+        transition: all 0.8s;
+        transition-delay: 1.7s ;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+      .quote {
+        opacity: 1;
+        transition: all 0.8s;
+        transition-delay: 0.1s ;
+      }
+    }
+}
+@keyframes cardAnimation {
+  0% {
+    opacity: 0;
+      transform: scale(1.1);
+      transform: translateY(300px);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+      transform: translateY(0px);
+  }
+ }

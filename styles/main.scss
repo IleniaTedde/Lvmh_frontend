@@ -1,0 +1,22 @@
+// Fonts
+@font-face {
+    font-family: "Photograph Signature";
+    src: local("Photograph Signature"), 
+    url("../assets/fonts/Photograph-Signature-Logo-fonts/Photograph Signature.ttf") format("truetype");
+}
+
+@import "_common";
+@import "_breakpoints";
+@import "_media_queries";
+@import "_variables";
+@import "_swiper";
+@import "_swal_custom";
+
+
+body,
+html,
+#__next {
+    margin: 0;
+    height: 100%;
+    overscroll-behavior: none !important;
+}

@@ -1,0 +1,55 @@
+@use "sass:map";
+@import "../styles/variables";
+@import "../styles/media_queries";
+
+.swal2-popup {
+    border-radius: 0px !important;
+    color: map.get($theme-colors, "dark-blue") !important;
+    background-color: map.get($theme-colors, "grey") !important;
+    min-height: 416px;
+    box-sizing: border-box !important;
+    padding: 2rem 1rem !important;
+}
+
+.swal2-title {
+    font-size: 1.625rem;
+    @include montserrat-regular;
+   
+}
+
+.swal2-html-container {
+    margin-top: 2rem !important;
+    @include montserrat-regular;
+    
+}
+
+.swal2-actions {
+    button {
+        border-radius: 0 !important;
+        background-color: map.get($theme-colors, "gold") !important;
+        color: map.get($theme-colors, "darl-blue") !important;
+
+        &:focus {
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) !important;
+        }
+    }
+}
+
+.swal2-close {
+    background-color: map.get($theme-colors, "dark-blue") !important;
+    border-radius: 20px !important;
+    font-size: 2rem !important;
+    margin-top: 1rem !important;
+    margin-right: 1rem !important;
+    color: map.get($theme-colors, "gold") !important;
+
+    &:focus {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    svg {
+        display: block;
+        margin: 12px !important;
+        flex-shrink: 0;
+    }
+}

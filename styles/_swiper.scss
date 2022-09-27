@@ -1,0 +1,323 @@
+@use "sass:map";
+@import "../styles/variables";
+@import "../styles/media_queries";
+
+
+.heroHomeCarousel {
+    .swiper {
+        width: 100% !important;
+    }
+}
+
+.reviewCarousel {
+    .reviewCarouselSwiper {
+        width: 100% !important;
+        .swiper-wrapper {
+            padding-bottom: 6rem;
+            @include breakpoint-under('lg') {
+                padding-bottom: 0rem;
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            padding: 1rem 0;
+            margin: auto;
+            @include breakpoint-under('lg') {
+                display: none;
+            }
+    
+            .swiper-pagination-bullet  {
+                border-radius: 100% !important;
+                 width: 10px !important;
+                 height: 10px !important;
+                 margin: 0 0.5rem;
+                background-color: map.get($theme-colors, "gold") !important;
+                position: relative;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                &::before {
+                    content: '';
+                    border-radius: 100% !important;
+                    width: 20px !important;
+                    height: 20px !important;
+                    border: 1px solid map.get($theme-colors, "gold") !important;
+                    position: absolute !important;
+                    top: -6px;
+                    left: -6px;
+                    
+                }
+    
+            }
+        }
+
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      transform: translateY(-2.5rem) !important;
+
+      z-index: 2;
+
+      @include breakpoint-under("xxl") {
+        transform: translateY(-2.5rem) !important;
+      }
+
+      @include breakpoint-under("lg") {
+        transform: translateY(0rem) !important;
+      }
+    }
+    }
+
+    .reviewCarouselSwiperText {
+        width: 100% !important;
+        .swiper-wrapper {
+            @include breakpoint-under('lg'){
+                padding-bottom: 6rem;
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            padding: 1rem 0;
+            margin: auto;
+            display: none;
+            @include breakpoint-under('lg') {
+                display: block;
+            }
+    
+            .swiper-pagination-bullet  {
+                border-radius: 100% !important;
+                 width: 10px !important;
+                 height: 10px !important;
+                 margin: 0 0.5rem;
+                background-color: map.get($theme-colors, "gold") !important;
+                position: relative;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                &::before {
+                    content: '';
+                    border-radius: 100% !important;
+                    width: 20px !important;
+                    height: 20px !important;
+                    border: 1px solid map.get($theme-colors, "gold") !important;
+                    position: absolute !important;
+                    top: -6px;
+                    left: -6px;
+                    
+                }
+    
+            }
+        }
+
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      transform: translateY(-2.5rem) !important;
+
+      @include breakpoint-under("lg") {
+        transform: translateY(0rem) !important;
+      }
+
+      z-index: 2;
+
+      @include breakpoint-under("xxl") {
+        transform: translateY(-2.5rem) !important;
+      }
+
+      @include breakpoint-under("lg") {
+        transform: translateY(0rem) !important;
+      }
+    }
+    }
+}
+
+.servicesHomeCarousel {
+    .servicesHomeCarouselSwiper {
+            width: 100% !important;
+            .swiper-wrapper {
+              padding-left: 4rem;
+              @include breakpoint-under('xxl'){
+                padding-left: 8rem;
+              }
+               @include breakpoint-under('lg'){
+                 padding-left: 0rem;
+               }
+               @include breakpoint-under('md'){
+                padding-left: 2rem;
+              }
+              @include breakpoint-under('sm'){
+                padding-left: 0rem;
+              }
+            }
+            .swiper-slide {
+                position: relative;
+                width: fit-content;
+                height: fit-content;
+                justify-content: flex-end;
+                display: flex;
+                width: 1200px;  
+               justify-content: space-between;
+                // .text {
+                //   display: none;
+                // }
+                @include breakpoint-under('xxl'){
+                  width: 85%;
+                }
+                @include breakpoint-under('lg'){
+                    flex-direction: column;
+                    width: fit-content;
+                    width: 30%;
+                  }
+                  @include breakpoint-under('md'){
+                    width: 55%;
+                  }
+                img {
+            
+                        width: 80%;
+                      
+                      @include breakpoint-under('xl'){
+                        width: 60%;
+                      }
+                      @include breakpoint-under('lg'){
+                        width: 100%;
+                      }
+                      @include breakpoint-under('md'){
+                        width: 80%;
+                      }
+                      @include breakpoint-under('sm'){
+                        width: 100%;
+                      }
+                   
+                }
+            }
+            .swiper-slide-active {    
+     
+                // .text {
+                //     display: block;
+                //  }
+            }
+            .swiper-wrapper {
+              padding-top: 6rem !important;
+              @include breakpoint-under("lg"){
+                padding-top: 3rem !important;
+              }
+              position: relative;
+            }
+            .swiper-pagination {
+              height: fit-content;
+              top: 0px;
+              margin-bottom: 2rem !important;
+                @include breakpoint-under('lg') {
+                    display: none;
+                }
+        
+                .swiper-pagination-bullet  {
+                  height: auto;
+                    margin: 0 1.5rem;
+                    width: fit-content;
+                    position: relative;
+                    @include noto-bold;
+                    font-size: 1.875;
+                    text-transform: capitalize;
+                    padding-bottom: 0.3rem;
+                    cursor: pointer;
+                    opacity: 1;
+                    &::after {
+                      content: '';
+                      position: absolute;
+                      bottom: 0px;
+                      left: 0%;
+                      width: 0%;
+                      height: 1px;
+                      background-color: map.get($theme-colors, "gold");
+                      transition: all .6s cubic-bezier(.19,1,.22,1);
+                      @media (prefers-reduced-motion: reduce) {
+                          transition: all 0s;
+                          transition-delay: 0ms;
+                      }
+      
+                    }
+                    &:hover {
+                      &::after{
+                          left: 0;
+                          width: 100%;
+                      }
+                  }
+                }
+                .swiper-pagination-bullet-active {
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0%;
+                    width: 20%;
+                    height: 1px;
+                    background-color: map.get($theme-colors, "gold");
+                    transition: all .6s cubic-bezier(.19,1,.22,1);
+                    @media (prefers-reduced-motion: reduce) {
+                        transition: all 0s;
+                        transition-delay: 0ms;
+                    }
+                    @include breakpoint-under('lg'){
+                      display: none;
+                  }
+                  }
+                  &:hover {
+                    &::after{
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+        
+                }
+            }
+    
+    
+        &.swiper-slide-prev,
+        &.swiper-slide-next {
+          transform: translateY(-2.5rem) !important;    
+          z-index: 2;
+    
+          @include breakpoint-under("xxl") {
+            transform: translateY(-2.5rem) !important;
+          }
+    
+          // @include breakpoint-under("lg") {
+          //   transform: translateY(0rem) !important;
+          // }
+        }
+    }
+    .servicesHomeCarouselSwiperText {
+       width: 100% !important;
+       position: relative !important;
+        .swiper-slide {
+         width: 100% !important;
+         overflow: hidden;
+        }
+    }
+}
+
+.socialCarousel {
+    .swiper {
+        top: 0.4rem !important;
+    }
+    .swiper-wrapper {
+      -webkit-transition-timing-function:linear!important;   
+       transition-timing-function:linear!important; 
+    }
+    .swiper-slide {
+        width: fit-content !important;
+        height: fit-content !important;
+        @include breakpoint-under('md'){
+            width: 30vw !important;
+        }
+        img {
+            width: 100% !important;
+            overflow: hidden;
+            transform-origin: 50% 50%;
+
+        }
+    }
+}
