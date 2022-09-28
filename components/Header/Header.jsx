@@ -14,7 +14,7 @@ const Header = ({ }) => {
 
   return (
     <>
-      <header className={StyleRegistry.Header}>
+      <header className={styles.Header}>
          HEADER
       </header>
     </>
